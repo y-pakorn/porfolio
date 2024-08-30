@@ -3,6 +3,7 @@ import "@fontsource-variable/bricolage-grotesque"
 import "@fontsource/playfair-display"
 
 import type { Metadata, Viewport } from "next"
+import { Analytics } from "@vercel/analytics/react"
 
 import { siteConfig } from "@/config/site"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
