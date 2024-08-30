@@ -5,7 +5,6 @@ import "@fontsource/playfair-display"
 import type { Metadata, Viewport } from "next"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 
 interface RootLayoutProps {
@@ -47,8 +46,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@tetration_lab",
+    images: siteConfig.ogImage,
+    creator: "@yyyoisha",
   },
   icons: {
     icon: "/logo.jpg",
