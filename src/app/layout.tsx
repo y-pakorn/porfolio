@@ -4,8 +4,10 @@ import "@fontsource/playfair-display"
 
 import type { Metadata, Viewport } from "next"
 import { Analytics } from "@vercel/analytics/react"
+import { GeistMono } from "geist/font/mono"
 
 import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 
 interface RootLayoutProps {
@@ -66,7 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className="min-h-screen antialiased">
+      <body className={cn("min-h-screen antialiased", GeistMono.variable)}>
         <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
         </ThemeProvider>

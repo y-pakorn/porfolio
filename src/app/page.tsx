@@ -1,107 +1,20 @@
-import { ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { TECH_STACK } from "@/constants/tech-stack"
 import { HACKATHONS } from "@/constants/work"
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons"
-import _ from "lodash"
-import { ChevronDown, ChevronRight, ExternalLink, Trophy } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { Button, ButtonProps } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { Header } from "@/components/common/header"
+import { MainButton } from "@/components/common/main-button"
+import { ProjectCard } from "@/components/common/project-card"
+import { TechStackCard } from "@/components/common/tech-stack"
+import Marquee from "@/components/magicui/marquee"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import SparklesText from "@/components/magicui/sparkles-text"
 import TypingAnimation from "@/components/magicui/typing-animation"
-
-const MainButton = ({
-  href,
-  className,
-  children,
-  ...props
-}: ButtonProps & {
-  href: string
-}) => (
-  <Link href={href} target="_blank" rel="noopener noreferrer">
-    <Button
-      variant="outline"
-      {...props}
-      className={cn(
-        "group gap-2 rounded-full ring-1 ring-transparent ring-offset-2 transition-all duration-300 hover:ring-primary",
-        className
-      )}
-    >
-      {children}
-      <ChevronRight className="size-4 stroke-2 transition-transform group-hover:translate-x-1" />
-    </Button>
-  </Link>
-)
-
-const Header = ({
-  title,
-  subtitle,
-}: {
-  title: ReactNode
-  subtitle: ReactNode
-}) => (
-  <div className="space-y-2">
-    <div className="flex items-center gap-4">
-      <Separator orientation="horizontal" className="flex-1" />
-      <h2 className="text-2xl font-extrabold md:text-3xl">{title}</h2>
-      <Separator orientation="horizontal" className="flex-1" />
-    </div>
-    <p className="text-sm text-muted-foreground md:text-base">{subtitle}</p>
-  </div>
-)
-
-const ProjectCard = ({
-  title,
-  description,
-  date,
-  prizes,
-  links,
-}: {
-  title: string
-  description: string
-  date: string
-  tags?: readonly string[]
-  prizes?: readonly string[][]
-  links?: readonly string[][]
-}) => (
-  <div className="group flex h-fit cursor-default flex-col items-start gap-2 text-start transition-transform duration-500 md:scale-95 md:hover:scale-100">
-    <h4 className="text-sm transition-opacity duration-500 group-hover:opacity-100 md:opacity-0">
-      {date}
-    </h4>
-    <h3 className="font-serif text-xl font-semibold tracking-wide md:text-2xl">
-      {title}
-    </h3>
-    <p className="text-xs text-muted-foreground md:text-sm">{description}</p>
-    {links && (
-      <div className="flex flex-wrap items-center gap-2 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
-        {links.map(([label, url], i) => (
-          <Link href={url} key={i} target="_blank" rel="noopener noreferrer">
-            <Badge variant="outline">
-              {_.startCase(label)}
-              <ExternalLink className="ml-1 size-3" />
-            </Badge>
-          </Link>
-        ))}
-      </div>
-    )}
-    <div className="flex flex-col">
-      {prizes?.map((p, i) => (
-        <div
-          key={i}
-          className="inline-flex items-center gap-2 font-serif text-sm font-semibold md:text-base"
-        >
-          <Trophy className="size-4" />
-          <span>{p[0]}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-)
 
 export default function Home() {
   return (
@@ -154,23 +67,45 @@ export default function Home() {
           </div>
         </div>
 
-        {
-          //<div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
-          //<Header
-          //title="Tech Stack"
-          //subtitle="Some of the technologies that I've worked with. I'm always open to learning new things and exploring new technologies!"
-          ///>
-          //</div>
-        }
-
-        {
-          //<div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
-          //<Header
-          //title="Projects"
-          //subtitle="Here are some of my projects that I've worked on. Some are side gigs, some are personal, some are open-source, and some are just for fun!"
-          ///>
-          //</div>
-        }
+        <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+          <Header
+            title="Tech Stacks"
+            subtitle="Here are some of the technologies I'm familiar with."
+          />
+          <div className="relative hidden md:block">
+            <Marquee>
+              {TECH_STACK.slice(0, TECH_STACK.length / 2).map((tech, i) => (
+                <TechStackCard
+                  key={i}
+                  title={tech.title}
+                  description={tech.description}
+                  className="max-w-72"
+                />
+              ))}
+            </Marquee>
+            <Marquee reverse>
+              {TECH_STACK.slice(-TECH_STACK.length / 2).map((tech, i) => (
+                <TechStackCard
+                  key={i}
+                  title={tech.title}
+                  description={tech.description}
+                  className="max-w-72"
+                />
+              ))}
+            </Marquee>
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background" />
+          </div>
+          <div className="flex flex-col gap-1 md:hidden">
+            {TECH_STACK.map((tech, i) => (
+              <TechStackCard
+                key={i}
+                title={tech.title}
+                description={tech.description}
+              />
+            ))}
+          </div>
+        </div>
 
         <div className="relative flex flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
           <Header

@@ -13,8 +13,14 @@ export const TECH_STACK = [
       "Previously used UI library for my work and personal projects.",
   },
   {
-    title: "Solidity/Foundry/Viem/Wagmi/Wallet Connect",
-    description: "EVM development stacks for building blockchain applications.",
+    title: "Solidity/Foundry/RETH",
+    description:
+      "EVM contract/backend development stacks for building blockchain applications.",
+  },
+  {
+    title: "Viem/Wagmi/Wallet Connect",
+    description:
+      "EVM frontend development stacks for building blockchain applications.",
   },
   {
     title: "CosmWasm",
