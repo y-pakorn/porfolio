@@ -92,7 +92,13 @@ export function Hero() {
             duration: 1,
             ease: "easeInOut",
           }}
-          className="flex items-center gap-2"
+          className="flex cursor-pointer items-center gap-2"
+          onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: "smooth",
+            })
+          }}
         >
           <SparklesText text="My Works" className="text-2xl font-medium" />
           <ChevronDown className="size-4" />

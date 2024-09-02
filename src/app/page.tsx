@@ -11,152 +11,155 @@ import Marquee from "@/components/magicui/marquee"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 
 import { Hero } from "./hero"
+import { Scroll } from "./scroll"
 
 export default function Home() {
   return (
-    <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none md:text-center">
-      <div className="container left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background">
-        <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
-          <Hero />
-        </div>
+    <Scroll>
+      <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
+        <div className="container left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background">
+          <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
+            <Hero />
+          </div>
 
-        <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
-          <Header
-            title="Tech Stacks"
-            subtitle="Here are some of the technologies I'm familiar with."
-          />
-          <div className="relative hidden md:block">
-            <Marquee>
-              {TECH_STACK.slice(0, TECH_STACK.length / 2).map((tech, i) => (
+          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+            <Header
+              title="Tech Stacks"
+              subtitle="Here are some of the technologies I'm familiar with."
+            />
+            <div className="relative hidden md:block">
+              <Marquee>
+                {TECH_STACK.slice(0, TECH_STACK.length / 2).map((tech, i) => (
+                  <TechStackCard
+                    key={i}
+                    title={tech.title}
+                    description={tech.description}
+                    className="max-w-72"
+                  />
+                ))}
+              </Marquee>
+              <Marquee reverse>
+                {TECH_STACK.slice(-TECH_STACK.length / 2).map((tech, i) => (
+                  <TechStackCard
+                    key={i}
+                    title={tech.title}
+                    description={tech.description}
+                    className="max-w-72"
+                  />
+                ))}
+              </Marquee>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background" />
+            </div>
+            <div className="flex flex-col gap-1 md:hidden">
+              {TECH_STACK.map((tech, i) => (
                 <TechStackCard
                   key={i}
                   title={tech.title}
                   description={tech.description}
-                  className="max-w-72"
                 />
               ))}
-            </Marquee>
-            <Marquee reverse>
-              {TECH_STACK.slice(-TECH_STACK.length / 2).map((tech, i) => (
-                <TechStackCard
-                  key={i}
-                  title={tech.title}
-                  description={tech.description}
-                  className="max-w-72"
-                />
-              ))}
-            </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background" />
+            </div>
           </div>
-          <div className="flex flex-col gap-1 md:hidden">
-            {TECH_STACK.map((tech, i) => (
-              <TechStackCard
-                key={i}
-                title={tech.title}
-                description={tech.description}
-              />
-            ))}
-          </div>
-        </div>
 
-        <div className="relative flex flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
-          <Header
-            title="Hackathons/Bounties"
-            subtitle="I love to participate in hackathons! Here are some of my works
+          <div className="relative flex flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+            <Header
+              title="Hackathons/Bounties"
+              subtitle="I love to participate in hackathons! Here are some of my works
               from the hackathons I've joined."
+            />
+            <div className="mt-4 grid gap-8 md:grid-cols-2 md:gap-2">
+              {HACKATHONS.map((hackathon, i) => (
+                <ProjectCard
+                  key={i}
+                  title={hackathon.title}
+                  description={hackathon.description}
+                  date={hackathon.date.toLocaleDateString()}
+                  tags={hackathon.tags}
+                  prizes={hackathon.prizes}
+                  links={hackathon.links}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="pointer-events-none h-96" />
+        <div className="light pointer-events-auto fixed bottom-0 flex h-96 w-full flex-col gap-2 py-8 text-foreground md:gap-4">
+          <div className="absolute left-1/2 right-1/2 top-0 z-[-1] -ml-[50vw] -mr-[50vw] h-full w-screen bg-background" />
+          <VelocityScroll
+            text="CONTACT"
+            className="text-4xl font-black tracking-wider md:text-5xl"
           />
-          <div className="mt-4 grid gap-8 md:grid-cols-2 md:gap-2">
-            {HACKATHONS.map((hackathon, i) => (
-              <ProjectCard
-                key={i}
-                title={hackathon.title}
-                description={hackathon.description}
-                date={hackathon.date.toLocaleDateString()}
-                tags={hackathon.tags}
-                prizes={hackathon.prizes}
-                links={hackathon.links}
-              />
-            ))}
+          <div className="container flex flex-1 flex-col gap-6">
+            <Separator />
+            <div className="flex flex-wrap gap-x-4 gap-y-2 md:justify-around">
+              <div className="text-start text-2xl font-semibold md:text-3xl">
+                <h2 className="text-xl text-muted-foreground md:text-2xl">
+                  X/TWITTER
+                </h2>
+                <Link
+                  href={`https://x.com/${siteConfig.links.twitter}`}
+                  className="underline transition-colors hover:text-muted-foreground"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @{siteConfig.links.twitter}
+                </Link>
+              </div>
+              <div className="text-start text-2xl font-semibold md:text-3xl">
+                <h2 className="text-xl text-muted-foreground md:text-2xl">
+                  GITHUB
+                </h2>
+                <Link
+                  href={`https://github.com/${siteConfig.links.github}`}
+                  className="underline transition-colors hover:text-muted-foreground"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @{siteConfig.links.github}
+                </Link>
+              </div>
+              <div className="text-start text-2xl font-semibold md:text-3xl">
+                <h2 className="text-xl text-muted-foreground md:text-2xl">
+                  EMAIL
+                </h2>
+                <Link
+                  href={`mailto:${siteConfig.email}`}
+                  className="underline transition-colors hover:text-muted-foreground"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {siteConfig.email}
+                </Link>
+              </div>
+            </div>
+            <Separator />
+            <div className="hidden flex-1 md:flex" />
+            <p className="text-xs">
+              © {new Date().getFullYear()} {siteConfig.name}. All rights
+              reserved. <br /> Made with love, coffee,{" "}
+              <Link
+                href="https://nextjs.org/"
+                className="underline transition-colors hover:text-muted-foreground"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Next.js
+              </Link>
+              , and{" "}
+              <Link
+                href="https://ui.shadcn.com/"
+                className="underline transition-colors hover:text-muted-foreground"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shadcn
+              </Link>
+              .
+            </p>
           </div>
         </div>
-      </div>
-      <div className="pointer-events-none h-96" />
-      <div className="light pointer-events-auto fixed bottom-0 flex h-96 w-full flex-col gap-2 py-8 text-foreground md:gap-4">
-        <div className="absolute left-1/2 right-1/2 top-0 z-[-1] -ml-[50vw] -mr-[50vw] h-full w-screen bg-background" />
-        <VelocityScroll
-          text="CONTACT"
-          className="text-4xl font-black tracking-wider md:text-5xl"
-        />
-        <div className="container flex flex-1 flex-col gap-6">
-          <Separator />
-          <div className="flex flex-wrap gap-x-4 gap-y-2 md:justify-around">
-            <div className="text-start text-2xl font-semibold md:text-3xl">
-              <h2 className="text-xl text-muted-foreground md:text-2xl">
-                X/TWITTER
-              </h2>
-              <Link
-                href={`https://x.com/${siteConfig.links.twitter}`}
-                className="underline transition-colors hover:text-muted-foreground"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @{siteConfig.links.twitter}
-              </Link>
-            </div>
-            <div className="text-start text-2xl font-semibold md:text-3xl">
-              <h2 className="text-xl text-muted-foreground md:text-2xl">
-                GITHUB
-              </h2>
-              <Link
-                href={`https://github.com/${siteConfig.links.github}`}
-                className="underline transition-colors hover:text-muted-foreground"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @{siteConfig.links.github}
-              </Link>
-            </div>
-            <div className="text-start text-2xl font-semibold md:text-3xl">
-              <h2 className="text-xl text-muted-foreground md:text-2xl">
-                EMAIL
-              </h2>
-              <Link
-                href={`mailto:${siteConfig.email}`}
-                className="underline transition-colors hover:text-muted-foreground"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {siteConfig.email}
-              </Link>
-            </div>
-          </div>
-          <Separator />
-          <div className="hidden flex-1 md:flex" />
-          <p className="text-xs">
-            © {new Date().getFullYear()} {siteConfig.name}. All rights
-            reserved. <br /> Made with love, coffee,{" "}
-            <Link
-              href="https://nextjs.org/"
-              className="underline transition-colors hover:text-muted-foreground"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Next.js
-            </Link>
-            , and{" "}
-            <Link
-              href="https://ui.shadcn.com/"
-              className="underline transition-colors hover:text-muted-foreground"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Shadcn
-            </Link>
-            .
-          </p>
-        </div>
-      </div>
-    </main>
+      </main>
+    </Scroll>
   )
 }
