@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
+import { useLenis } from "lenis/react"
 import { ChevronDown } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
@@ -11,6 +12,8 @@ import SparklesText from "@/components/magicui/sparkles-text"
 import TypingAnimation from "@/components/magicui/typing-animation"
 
 export function Hero() {
+  const lenis = useLenis()
+
   return (
     <>
       <motion.div
@@ -94,9 +97,8 @@ export function Hero() {
           }}
           className="flex cursor-pointer items-center gap-2"
           onClick={() => {
-            window.scrollTo({
-              top: window.innerHeight,
-              behavior: "smooth",
+            lenis?.scrollTo(window.innerHeight, {
+              duration: 2,
             })
           }}
         >

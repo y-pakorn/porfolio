@@ -15,14 +15,17 @@ import { Scroll } from "./scroll"
 
 export default function Home() {
   return (
-    <Scroll>
-      <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
+    <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
+      <Scroll>
         <div className="container left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background">
           <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
             <Hero />
           </div>
 
-          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+          <div
+            className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4"
+            id="techstack"
+          >
             <Header
               title="Tech Stacks"
               subtitle="Here are some of the technologies I'm familiar with."
@@ -159,7 +162,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </main>
-    </Scroll>
+      </Scroll>
+    </main>
   )
 }
