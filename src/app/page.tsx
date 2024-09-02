@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { TECH_STACK } from "@/constants/tech-stack"
-import { HACKATHONS } from "@/constants/work"
+import { HACKATHONS, PROJECTS } from "@/constants/work"
 
 import { siteConfig } from "@/config/site"
 import { Separator } from "@/components/ui/separator"
+import { HackathonCard } from "@/components/common/hackathon-card"
 import { Header } from "@/components/common/header"
 import { ProjectCard } from "@/components/common/project-card"
 import { TechStackCard } from "@/components/common/tech-stack"
@@ -15,9 +16,9 @@ import { Scroll } from "./scroll"
 
 export default function Home() {
   return (
-    <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
+    <main className="flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
       <Scroll>
-        <div className="container left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background">
+        <div className="left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background pl-8 pr-8">
           <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
             <Hero />
           </div>
@@ -65,7 +66,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+            <Header
+              title="Projects"
+              subtitle="Additional projects that I've worked on or contributed to."
+            />
+            <div className="h-4" />
+            <div className="space-y-6 md:space-y-8">
+              {PROJECTS.map((project, i) => (
+                <ProjectCard key={i} {...project} />
+              ))}
+            </div>
+          </div>
+
+          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
             <Header
               title="Hackathons/Bounties"
               subtitle="I love to participate in hackathons! Here are some of my works
@@ -73,7 +87,7 @@ export default function Home() {
             />
             <div className="mt-4 grid gap-8 md:grid-cols-2 md:gap-2">
               {HACKATHONS.map((hackathon, i) => (
-                <ProjectCard
+                <HackathonCard
                   key={i}
                   title={hackathon.title}
                   description={hackathon.description}

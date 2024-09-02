@@ -1,4 +1,45 @@
-export const WORKS = []
+export const PROJECTS = [
+  {
+    title: "Optimism Governance Dashboard",
+    image: "https://i.imgur.com/lBdTI25.png",
+    w: "Curia Lab",
+    chain: "Optimism",
+    description:
+      "Governance dashboard for Optimism focusing on participation, voter behavior, power structure, proposal outcomes. Providing insights and democratizing information for informed decision-making in governance process.",
+    website: "https://optimism.curiahub.xyz/",
+    scope: "Fullstack (Frontend, Backend), Some of the data pipeline",
+  },
+  {
+    title: "OP Passport",
+    image: "https://i.imgur.com/TScpjoJ.png",
+    w: "Curia Lab",
+    chain: "Optimism",
+    description:
+      "The OP Passport project aims to develop an open-source platform for governance participants on Optimism, ZKP technology for privacy-preserving attestations and on-chain self-manageable identity passports.",
+    website: "https://www.oppassport.xyz/",
+    scope:
+      "Privacy-preserving attestation design, ZK Circuit (Noir), Smart Contract, Demo Frontend",
+  },
+  {
+    title: "Minity",
+    image: "https://i.imgur.com/JgHSo3C.png",
+    chain: "Initia",
+    description:
+      "Initia and minitia native portfolio tracker. Track your portfolio, assets, defi positions, NFTs, Jennies, across every interwoven roll-up minitia.",
+    website: "https://minity.xyz/",
+    scope: "Fullstack (Frontend, Backend), Data Pipeline",
+  },
+  {
+    title: "Osmosis Alloy Dashboard",
+    image: "https://i.imgur.com/vu69VFN.png",
+    chain: "Osmosis",
+    description:
+      "Analytical dashboard for Osmosis alloyed asset pool. Visualizing multiple information, data points, and statistics related to Osmosis' new alloyed asset.",
+    website: "https://osmosis-alloy-dashboard.pages.dev/",
+    scope: "Fullstack (Frontend, Backend), Data Pipeline",
+  },
+]
+
 export const HACKATHONS = [
   {
     title: "Night Market",
