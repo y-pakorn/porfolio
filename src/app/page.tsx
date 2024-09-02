@@ -1,70 +1,23 @@
-import Image from "next/image"
 import Link from "next/link"
 import { TECH_STACK } from "@/constants/tech-stack"
 import { HACKATHONS } from "@/constants/work"
-import { SiGithub, SiX } from "@icons-pack/react-simple-icons"
-import { ChevronDown } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { Separator } from "@/components/ui/separator"
 import { Header } from "@/components/common/header"
-import { MainButton } from "@/components/common/main-button"
 import { ProjectCard } from "@/components/common/project-card"
 import { TechStackCard } from "@/components/common/tech-stack"
 import Marquee from "@/components/magicui/marquee"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
-import SparklesText from "@/components/magicui/sparkles-text"
-import TypingAnimation from "@/components/magicui/typing-animation"
+
+import { Hero } from "./hero"
 
 export default function Home() {
   return (
     <main className="container flex flex-col items-center justify-center overflow-x-hidden overscroll-none md:text-center">
       <div className="container left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background">
         <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/logo.jpg"
-              width={24}
-              height={24}
-              alt="Logo"
-              className="rounded-full"
-            />
-            <h2 className="text-lg font-semibold md:text-xl">yoisha</h2>
-          </div>
-          <h1 className="max-w-[48rem] text-4xl font-medium md:text-6xl">
-            Pioneering the Future of{" "}
-            <span className="font-serif">
-              Privacy, Cryptography, <span className="font-sans">and</span>{" "}
-              Blockchain Applications
-            </span>
-            .
-          </h1>
-          <TypingAnimation
-            className="text-start font-serif text-base font-bold md:text-center md:text-lg"
-            text="Personal Portfolio"
-            duration={100}
-          />
-          <p className="text-sm text-muted-foreground md:max-w-[48rem] md:text-base">
-            Hi! I'm Yoi, a software developer, cryptography engineer, and a
-            privacy enthusiast. I'm also a big fan of open-source software and I
-            love to contribute to the community. I also love to participate in
-            hackathon! Feel free to check out my works and don't hesitate to
-            reach out to me if you have any questions or just want to say hi!
-          </p>
-          <div className="flex items-center gap-2">
-            <MainButton href={`https://github.com/${siteConfig.links.github}`}>
-              <SiGithub className="size-4" />
-              Github
-            </MainButton>
-            <MainButton href={`https://x.com/${siteConfig.links.twitter}`}>
-              <SiX className="size-3" />
-              X/Twitter
-            </MainButton>
-          </div>
-          <div className="absolute bottom-6 flex animate-bounce items-center gap-2">
-            <SparklesText text="My Works" className="text-2xl font-medium" />
-            <ChevronDown className="size-4" />
-          </div>
+          <Hero />
         </div>
 
         <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
