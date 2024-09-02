@@ -97,7 +97,7 @@ export function Hero() {
           }}
           className="flex cursor-pointer items-center gap-2"
           onClick={() => {
-            lenis?.scrollTo(window.innerHeight, {
+            lenis?.scrollTo("#techstack", {
               duration: 2,
             })
           }}
