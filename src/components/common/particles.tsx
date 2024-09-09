@@ -59,9 +59,14 @@ export function SiteParticles() {
             },
             collisions: {
               enable: true,
-              mode: "absorb",
-              absorb: {
-                speed: 10,
+              mode: "bounce",
+              bounce: {
+                horizontal: {
+                  value: 3,
+                },
+                vertical: {
+                  value: 1,
+                },
               },
             },
             move: {
@@ -84,7 +89,7 @@ export function SiteParticles() {
               type: "circle",
             },
             size: {
-              value: { min: 1, max: 5 },
+              value: 0,
             },
           },
           detectRetina: true,
