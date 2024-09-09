@@ -21,6 +21,15 @@ export const PROJECTS = [
       "Privacy-preserving attestation design, ZK Circuit (Noir), Smart Contract, Demo Frontend",
   },
   {
+    title: "Suibuddy",
+    image: "https://i.imgur.com/ERT5gAt.png",
+    chain: "Sui",
+    description:
+      "Sui mobile-focus portfolio and position tracker, discover strategies by following other active Sui users and get notified on their actions.",
+    website: "https://suibuddy.com/",
+    scope: "Fullstack (Frontend, Backend), Data Pipeline",
+  },
+  {
     title: "Minity",
     image: "https://i.imgur.com/JgHSo3C.png",
     chain: "Initia",

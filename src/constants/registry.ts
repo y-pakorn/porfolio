@@ -14,6 +14,13 @@ export const REGISTRY = {
       logo: "https://cryptologos.cc/logos/optimism-ethereum-op-logo.svg?v=033",
       website: "https://optimism.io",
     },
+    Sui: {
+      title: "Sui",
+      description:
+        "Sui is a first-of-its-kind Layer 1 blockchain and smart contract platform designed to make digital asset ownership fast, private, secure, and accessible.",
+      logo: "https://assets.staticimg.com/cms/media/8uGGQmvkfODw7cnx3GuekBb404A2bTYUcTjBklHja.png",
+      website: "https://sui.io",
+    },
     Initia: {
       title: "Initia",
       description:
