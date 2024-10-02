@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site"
 import { Separator } from "@/components/ui/separator"
 import { HackathonCard } from "@/components/common/hackathon-card"
 import { Header } from "@/components/common/header"
+import { SiteParticles } from "@/components/common/particles"
 import { ProjectCard } from "@/components/common/project-card"
 import { TechStackCard } from "@/components/common/tech-stack"
 import Marquee from "@/components/magicui/marquee"
@@ -19,6 +20,10 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center overflow-x-hidden overscroll-none scroll-smooth md:text-center">
       <Scroll>
         <div className="left-1/2 right-1/2 top-0 z-10 -ml-[50vw] -mr-[50vw] flex h-full w-screen flex-col items-center bg-background pl-8 pr-8 *:z-10">
+          <div className="absolute left-0 top-0 h-screen w-full">
+            <div className="h-full w-full bg-[url('/gradient.webp')] bg-cover bg-bottom bg-no-repeat opacity-30" />
+          </div>
+          <SiteParticles className="absolute left-0 top-0 h-screen w-full md:p-12" />
           <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
             <Hero />
           </div>

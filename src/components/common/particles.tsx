@@ -5,7 +5,9 @@ import type { Container, Engine } from "@tsparticles/engine"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 
-export function SiteParticles() {
+import { cn } from "@/lib/utils"
+
+export function SiteParticles({ className }: { className?: string }) {
   const [init, setInit] = useState(false)
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export function SiteParticles() {
     init && (
       <Particles
         id="tsparticles"
-        className="fixed z-10 h-screen w-screen"
+        className={cn(className)}
         options={{
           fullScreen: false,
           fpsLimit: 120,
@@ -28,7 +30,7 @@ export function SiteParticles() {
             events: {
               onHover: {
                 enable: true,
-                mode: ["grab", "connect"],
+                mode: ["grab"],
                 parallax: {
                   enable: true,
                   force: 40,
@@ -54,7 +56,7 @@ export function SiteParticles() {
               color: "#ffffff",
               distance: 150,
               enable: true,
-              opacity: 0.1,
+              opacity: 0.05,
               width: 1,
             },
             collisions: {
@@ -80,7 +82,7 @@ export function SiteParticles() {
               straight: false,
             },
             number: {
-              value: 160,
+              value: 80,
             },
             opacity: {
               value: 0,
