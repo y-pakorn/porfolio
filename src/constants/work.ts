@@ -111,7 +111,7 @@ export const HACKATHONS = [
     prizes: [
       ["ETHOnline 2023 Finalist", "https://ethglobal.com/showcase/ztf-xnvwb"],
       [
-        "ETHOnline 2023 - Best Use Of Wormhole",
+        "ETHOnline 2023 - Wormhole: Best Use Of Wormhole",
         "https://ethglobal.com/showcase/ztf-xnvwb",
       ],
     ],
@@ -185,7 +185,7 @@ export const HACKATHONS = [
         "https://ethglobal.com/showcase/frames-hub-w77f9",
       ],
       [
-        "ETHGlobal Frameworks - Optimism Super Frame Discovery",
+        "ETHGlobal Frameworks - Optimism: Super Frame Discovery",
         "https://ethglobal.com/showcase/frames-hub-w77f9",
       ],
     ],
@@ -205,6 +205,29 @@ export const HACKATHONS = [
       [
         "ETHGlobal Circuit Breaker Finalist",
         "https://ethglobal.com/showcase/evmtrace-z6vh8",
+      ],
+    ],
+  },
+  {
+    title: "BlockElf",
+    description:
+      "BlockElf enables users to query on-chain data using natural language. Our product abstracts the complexities of on-chain queries, making this vital data accessible to everyone, regardless of their technical expertise.",
+    date: new Date("Oct 31, 2024"),
+    tags: ["AI", "On-chain Data", "Natural Language", "Query", "LLM"],
+    links: [
+      ["link", "https://blockelf.vercel.app"],
+      ["submission ETHGlobal", "https://ethglobal.com/showcase/blockelf-qxtw5"],
+      ["submission REDACTED", "https://devpost.com/software/block-elf"],
+      ["github", "https://github.com/y-pakorn/blockelf"],
+    ],
+    prizes: [
+      [
+        "REDACTED - Honorable Mention",
+        "https://devpost.com/software/block-elf",
+      ],
+      [
+        "ETHGlobal Singapore - NEAR Protocol: User owned AI is Near",
+        "https://ethglobal.com/showcase/blockelf-qxtw5",
       ],
     ],
   },
