@@ -31,7 +31,7 @@ export const PROJECTS = [
   },
   {
     title: "Minity",
-    image: "https://i.imgur.com/JgHSo3C.png",
+    image: "https://i.ibb.co/ch1GGcnZ/og-image.png",
     chain: "Initia",
     description:
       "Initia and minitia native portfolio tracker. Track your portfolio, assets, defi positions, NFTs, Jennies, across every interwoven roll-up minitia.",
@@ -44,7 +44,7 @@ export const PROJECTS = [
     chain: "Osmosis",
     description:
       "Analytical dashboard for Osmosis alloyed asset pool. Visualizing multiple information, data points, and statistics related to Osmosis' new alloyed asset.",
-    website: "https://osmosis-alloy-dashboard.pages.dev/",
+    website: "https://alloyed.osmosis.zone/",
     scope: "Fullstack (Frontend, Backend), Data Pipeline",
   },
 ]

@@ -25,7 +25,7 @@ export const REGISTRY = {
       title: "Initia",
       description:
         "Initia is a network for interwoven rollups. Binding a highly interwoven system of modular networks through architectural ownership.",
-      logo: "https://initia.xyz/favicon.svg",
+      logo: "https://chainbroker.io/_next/image/?url=https%3A%2F%2Fstatic.chainbroker.io%2Fmediafiles%2Fprojects%2Finitia%2Finitia.jpeg&w=2560&q=75",
       website: "https://initia.xyz",
     },
   },
