@@ -76,7 +76,7 @@ export function ProjectCard({
         <Link
           className={cn(
             buttonVariants({
-              variant: "outline",
+              variant: "outline-solid",
             }),
             "w-fit rounded-full transition-opacity duration-500 group-hover:opacity-100 md:opacity-0"
           )}

@@ -35,7 +35,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.05 }}
-        className="max-w-[48rem] text-4xl font-medium md:text-6xl"
+        className="max-w-3xl text-4xl font-medium md:text-6xl"
       >
         Pioneering the Future of{" "}
         <span className="font-serif">
@@ -59,7 +59,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.2 }}
-        className="text-sm text-muted-foreground md:max-w-[48rem] md:text-base"
+        className="text-sm text-muted-foreground md:max-w-3xl md:text-base"
       >
         Hi! I'm Yoi, a software developer, cryptography engineer, and a privacy
         enthusiast. I'm also a big fan of open-source software and I love to

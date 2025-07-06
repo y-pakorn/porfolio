@@ -24,12 +24,12 @@ export default function Home() {
             <div className="h-full w-full bg-[url('/gradient.webp')] bg-cover bg-bottom bg-no-repeat opacity-30" />
           </div>
           <SiteParticles className="absolute left-0 top-0 h-screen w-full md:p-12" />
-          <div className="relative flex h-screen max-w-[64rem] flex-col justify-center gap-2 self-center md:items-center md:gap-4">
+          <div className="relative flex h-screen max-w-5xl flex-col justify-center gap-2 self-center md:items-center md:gap-4">
             <Hero />
           </div>
 
           <div
-            className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4"
+            className="relative flex w-full flex-col gap-2 py-8 md:max-w-5xl md:gap-4"
             id="techstack"
           >
             <Header
@@ -57,8 +57,8 @@ export default function Home() {
                   />
                 ))}
               </Marquee>
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-white dark:from-background" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-white dark:from-background" />
             </div>
             <div className="flex flex-col gap-1 md:hidden">
               {TECH_STACK.map((tech, i) => (
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-5xl md:gap-4">
             <Header
               title="Projects"
               subtitle="Additional projects that I've worked on or contributed to."
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-[64rem] md:gap-4">
+          <div className="relative flex w-full flex-col gap-2 py-8 md:max-w-5xl md:gap-4">
             <Header
               title="Hackathons/Bounties"
               subtitle="I love to participate in hackathons! Here are some of my works
