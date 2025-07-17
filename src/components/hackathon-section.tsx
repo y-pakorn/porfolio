@@ -1,15 +1,10 @@
-"use client"
-
-import { useState } from "react"
 import Link from "next/link"
-import { ArrowUpRight, Asterisk, ExternalLink, Trophy } from "lucide-react"
+import { ExternalLink, Trophy } from "lucide-react"
 
 import { HACKATHONS } from "@/config/works"
 import { cn } from "@/lib/utils"
 
 import { Badge } from "./ui/badge"
-import { Button } from "./ui/button"
-import { Skeleton } from "./ui/skeleton"
 
 export default function HackathonSection() {
   return (
@@ -19,7 +14,7 @@ export default function HackathonSection() {
           HACKATHONS
         </h1>
         <p className="text-secondary-foreground text-sm md:text-base">
-          A collection of hackathons I've participated in.
+          {"A collection of hackathons I've participated in."}
         </p>
       </div>
 

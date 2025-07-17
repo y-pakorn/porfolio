@@ -34,7 +34,7 @@ export default function ProjectSection() {
       <div>
         <h1 className="font-serif text-2xl font-bold md:text-5xl">PROJECTS</h1>
         <p className="text-secondary-foreground text-sm md:text-base">
-          A collection of projects I've previously and currently worked on.
+          {"A collection of projects I've previously and currently worked on."}
         </p>
       </div>
       <div className="flex flex-1 flex-col gap-1 md:gap-2">
