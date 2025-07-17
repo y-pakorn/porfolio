@@ -75,3 +75,5 @@ export const HeroSection = forwardRef<
     </section>
   )
 })
+
+HeroSection.displayName = "HeroSection"
