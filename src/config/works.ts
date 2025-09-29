@@ -339,6 +339,24 @@ export const HACKATHONS = [
       ],
     ],
   },
+  {
+    at: "ETH Global Unite Defi",
+    atIcon: "https://ethglobal.b-cdn.net/events/unite/square-logo/default.png",
+    title: "Zeroinch",
+    description:
+      "Zeroinch is a privacy layer for 1inch’s Limit Order Protocol on Optimism using ZK and JIT MASP",
+    date: new Date("Aug 8, 2025"),
+    links: [
+      ["Submission", "https://ethglobal.com/showcase/zeroinch-cfkjq"],
+      ["Github", "https://github.com/y-pakorn/zeroinch"],
+    ],
+    prizes: [
+      [
+        "ETH Global Unite Defi Finalist",
+        "https://ethglobal.com/showcase/zeroinch-cfkjq",
+      ],
+    ],
+  },
 ] as {
   at: string
   atIcon: string
