@@ -67,6 +67,13 @@ export const PROJECTS = [
     website: "https://pracc.xyz/",
     scope: "Fullstack (Frontend, Backend), Data Pipeline",
   },
+  {
+    title: "Frostlytics",
+    description:
+      "Walrus staking dashboard. All-in-one analytics for Walrus: APY, staking, operator, fees, and supply.",
+    website: "https://frostlytics.xyz/",
+    scope: "Fullstack (Frontend, Backend), Data Pipeline",
+  },
 ] as {
   title: string
   image?: string
