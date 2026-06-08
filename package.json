@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "pnpm prettier ./src --write",
     "format:check": "pnpm prettier ./src --check"
   },
@@ -35,6 +36,7 @@
     "zod": "^3.25.74"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/lodash": "^4.17.20",
