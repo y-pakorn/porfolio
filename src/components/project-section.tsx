@@ -31,7 +31,7 @@ export default function ProjectSection() {
   return (
     <div className="container flex min-h-screen flex-col gap-4 py-6 md:py-12">
       <div>
-        <h1 className="font-serif text-2xl font-bold md:text-5xl">PROJECTS</h1>
+        <h2 className="font-serif text-2xl font-bold md:text-5xl">PROJECTS</h2>
         <p className="text-secondary-foreground text-sm md:text-base">
           {"A collection of projects I've previously and currently worked on."}
         </p>
@@ -57,6 +57,7 @@ export default function ProjectSection() {
                     src={project.website}
                     className="absolute inset-0 h-full w-full rounded-md"
                     title={project.title}
+                    loading="lazy"
                     onLoad={handleIframeLoad}
                   />
                 </div>
@@ -68,23 +69,28 @@ export default function ProjectSection() {
                 )}
               >
                 {isSelected && <Asterisk className="size-6 md:size-14" />}
-                <h2
+                <h3
                   className={cn(
                     "mt-1 font-serif font-bold md:text-3xl",
                     isSelected && "mt-2 text-xl md:text-5xl"
                   )}
                 >
                   {project.title}
-                </h2>
-                <Link href={project.website} target="_blank">
+                </h3>
+                <Link
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.title}`}
+                >
                   <ArrowUpRight className="size-4 md:size-8" />
                 </Link>
               </div>
               {isSelected && (
                 <>
-                  <h3 className="font-mono text-sm font-medium md:text-xl">
+                  <p className="font-mono text-sm font-medium md:text-xl">
                     {project.scope}
-                  </h3>
+                  </p>
                   <p className="text-secondary-foreground text-xs md:text-base">
                     {project.description}
                   </p>
@@ -94,8 +100,14 @@ export default function ProjectSection() {
                         variant="outline"
                         className="md:px-2.5 md:py-1.5 md:text-sm"
                       >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={REGISTRY.organization[project.w].logo}
+                          alt={REGISTRY.organization[project.w].title}
+                          width={16}
+                          height={16}
+                          loading="lazy"
+                          decoding="async"
                           className="size-4 shrink-0 rounded-full"
                         />
                         <span>{REGISTRY.organization[project.w].title}</span>
@@ -106,8 +118,14 @@ export default function ProjectSection() {
                         variant="outline"
                         className="md:px-2.5 md:py-1.5 md:text-sm"
                       >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={REGISTRY.chain[project.chain].logo}
+                          alt={REGISTRY.chain[project.chain].title}
+                          width={16}
+                          height={16}
+                          loading="lazy"
+                          decoding="async"
                           className="size-4 shrink-0 rounded-full"
                         />
                         <span>{REGISTRY.chain[project.chain].title}</span>

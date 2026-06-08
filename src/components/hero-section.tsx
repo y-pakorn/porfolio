@@ -28,8 +28,11 @@ export const HeroSection = forwardRef<
           width={20}
           height={20}
           className="rounded-full"
+          priority
         />
-        <h1 className="font-serif text-xl font-semibold">{siteConfig.name}</h1>
+        <span className="font-serif text-xl font-semibold">
+          {siteConfig.name}
+        </span>
       </div>
       <h1 className="font-serif text-3xl leading-8 font-semibold tracking-tighter text-shadow-2xs md:text-7xl md:leading-14">
         Pioneering the Future of
@@ -47,7 +50,11 @@ export const HeroSection = forwardRef<
         you have any questions or just want to say hi!`}
       </p>
       <div className="mt-4 flex items-center gap-1 overflow-hidden md:gap-2">
-        <Link href={siteConfig.url.twitter} target="_blank">
+        <Link
+          href={siteConfig.url.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InteractiveHoverButton className="px-3 py-1 md:px-6 md:py-1.5">
             <div className="flex items-center gap-2">
               <span className="mt-1">Twitter</span>
@@ -55,7 +62,11 @@ export const HeroSection = forwardRef<
             </div>
           </InteractiveHoverButton>
         </Link>
-        <Link href={siteConfig.url.github} target="_blank">
+        <Link
+          href={siteConfig.url.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InteractiveHoverButton className="px-3 py-1 md:px-6 md:py-1.5">
             <div className="flex items-center gap-2">
               <span className="mt-1">Github</span>
@@ -63,7 +74,11 @@ export const HeroSection = forwardRef<
             </div>
           </InteractiveHoverButton>
         </Link>
-        <Link href={siteConfig.url.email} target="_blank">
+        <Link
+          href={siteConfig.url.email}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InteractiveHoverButton className="px-3 py-1 md:px-6 md:py-1.5">
             <div className="flex items-center gap-2">
               <span className="mt-1">Email</span>
