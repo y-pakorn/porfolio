@@ -321,7 +321,7 @@ export const HACKATHONS: Hackathon[] = [
       "Lending",
     ],
     links: [
-      ["Link", "zk-lending.vercel.app/"],
+      ["Link", "https://zk-lending.vercel.app/"],
       ["Github", "https://github.com/JernKunpittaya/zk-lending"],
       [
         "announcement",

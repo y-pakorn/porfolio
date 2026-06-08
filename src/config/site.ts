@@ -7,10 +7,10 @@ export const siteConfig = {
   keywords: ["yoisha", "portfolio", "developer", "cryptography", "blockchain"],
   url: {
     base: env.NEXT_PUBLIC_APP_URL,
-    author: "yoisha",
+    author: "https://github.com/y-pakorn",
     twitter: "https://x.com/yyyoisha",
     github: "https://github.com/y-pakorn",
-    email: "mailto:pakorn.nth@hotmail.coom",
+    email: "mailto:pakorn.nth@hotmail.com",
   },
   twitter: "@yyyoisha",
   favicon: "/logo.jpg",
