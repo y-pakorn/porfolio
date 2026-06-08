@@ -50,7 +50,7 @@ export const REGISTRY = {
       website: "https://minity.xyz",
     },
   },
-} as {
+} satisfies {
   chain: Record<
     string,
     { title: string; description: string; logo: string; website?: string }

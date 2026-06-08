@@ -1,4 +1,27 @@
-export const PROJECTS = [
+import { REGISTRY } from "./registry"
+
+type Project = {
+  title: string
+  image?: string
+  w?: keyof typeof REGISTRY.organization
+  chain?: keyof typeof REGISTRY.chain
+  description: string
+  website: string
+  scope: string
+}
+
+type Hackathon = {
+  at: string
+  atIcon: string
+  title: string
+  description: string
+  date?: Date
+  tags?: string[]
+  links: [string, string][]
+  prizes: [string, string][]
+}
+
+export const PROJECTS: Project[] = [
   {
     title: "Optimism Governance Dashboard",
     image: "https://i.imgur.com/lBdTI25.png",
@@ -74,17 +97,9 @@ export const PROJECTS = [
     website: "https://frostlytics.xyz/",
     scope: "Fullstack (Frontend, Backend), Data Pipeline",
   },
-] as {
-  title: string
-  image?: string
-  w?: string
-  chain: string
-  description: string
-  website: string
-  scope: string
-}[]
+]
 
-export const HACKATHONS = [
+export const HACKATHONS: Hackathon[] = [
   {
     at: "Delphi Labs Cosmos Hackathon",
     atIcon:
@@ -357,13 +372,4 @@ export const HACKATHONS = [
       ],
     ],
   },
-] as {
-  at: string
-  atIcon: string
-  title: string
-  description: string
-  date: Date
-  tags: string[]
-  links: [string, string][]
-  prizes: [string, string][]
-}[]
+]
