@@ -14,5 +14,4 @@ export const siteConfig = {
   },
   twitter: "@yyyoisha",
   favicon: "/logo.jpg",
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
 }
