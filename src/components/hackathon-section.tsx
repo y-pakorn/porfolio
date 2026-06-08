@@ -38,9 +38,6 @@ export default function HackathonSection() {
                 />
                 <h2 className={cn("mt-2")}>{hackathon.title}</h2>
               </div>
-              {/* <h3 className="font-mono text-sm font-medium md:text-xl">
-                @ {hackathon.at}
-              </h3> */}
               <p className="text-secondary-foreground text-xs text-wrap md:text-sm">
                 {hackathon.description}
               </p>

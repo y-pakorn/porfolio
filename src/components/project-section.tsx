@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import _ from "lodash"
 import { ArrowUpRight, Asterisk } from "lucide-react"
 
 import { REGISTRY } from "@/config/registry"

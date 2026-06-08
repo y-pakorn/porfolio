@@ -2,7 +2,7 @@ import "@/styles/globals.css"
 import "lenis/dist/lenis.css"
 
 import type { Metadata, Viewport } from "next"
-import { Inter, Work_Sans } from "next/font/google"
+import { Work_Sans } from "next/font/google"
 import localFont from "next/font/local"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/next"
@@ -84,7 +84,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
         className={cn(
           "bg-background min-h-screen font-sans antialiased",
